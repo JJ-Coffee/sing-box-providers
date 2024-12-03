@@ -23,8 +23,8 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
-          repository: yaotthaha/sing-box-pub
-          ref: dev-yaott
+          repository: qjebbs/sing-box
+          ref: main
       - name: with_clash_ui
         id: dashboard
         run: |  
