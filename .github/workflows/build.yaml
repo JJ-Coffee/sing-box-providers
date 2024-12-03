@@ -24,7 +24,7 @@ jobs:
         with:
           fetch-depth: 0
           repository: PuerNya/sing-box
-          ref: dev-next
+          ref: outbound-providers
       - name: with_clash_ui
         id: dashboard
         run: |  
@@ -99,7 +99,7 @@ jobs:
         with:
           fetch-depth: 0
           repository: PuerNya/sing-box
-          ref: dev-next
+          ref: outbound-providers
       - name: with_clash_ui
         id: dashboard
         run: |  
