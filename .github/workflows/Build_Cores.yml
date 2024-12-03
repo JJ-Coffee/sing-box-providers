@@ -177,5 +177,5 @@ jobs:
             ## Changes
             - SING-BOX SUPPORT PROVIDERS
           files: |
-            sing-box-${{ env.SUFFIX }}
+            sing-box-*
           
