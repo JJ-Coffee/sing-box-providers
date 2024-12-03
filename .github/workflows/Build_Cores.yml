@@ -177,7 +177,6 @@ jobs:
           body: |
             ## Changes
             - SING-BOX SUPPORT PROVIDERS
-            - Supported platforms: ${{ matrix.jobs.goos }}
           draft: false
           prerelease: false
         env:
