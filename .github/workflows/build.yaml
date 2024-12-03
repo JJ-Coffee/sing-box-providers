@@ -74,10 +74,6 @@ jobs:
             goos: android
             goarch: arm64
             goarm: 7
-          - name: android-arm32
-            goos: android
-            goarch: arm
-            goarm: 7
 
       fail-fast: false
     runs-on: ubuntu-latest
