@@ -173,7 +173,7 @@ jobs:
         uses: actions/create-release@v1
         with:
           tag_name: ${{ needs.sing-box.outputs.version }}
-          release_name: v${{ needs.sing-box.outputs.version }}
+          release_name: ${{ needs.sing-box.outputs.version }}
           body: |
             ## Changes
             - SING-BOX SUPPORT PROVIDERS
