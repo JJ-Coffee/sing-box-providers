@@ -178,6 +178,4 @@ jobs:
             - SING-BOX SUPPORT PROVIDERS
           files: |
             sing-box-${{ env.SUFFIX }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
