@@ -24,7 +24,7 @@ jobs:
       - uses: actions/checkout@v4.1.1
         with:
           fetch-depth: 0
-          repository: PuerNya/sing-box
+          repository: JJ-Coffee/sing-box
           ref: dev-next
 
       - name: setup go
@@ -111,7 +111,7 @@ jobs:
       - uses: actions/checkout@v4.1.1
         with:
           fetch-depth: 0
-          repository: PuerNya/sing-box
+          repository: JJ-Coffee/sing-box
           ref: dev-next
 
       - name: set up go1.22 loongarch
