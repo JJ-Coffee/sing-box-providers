@@ -174,14 +174,28 @@ jobs:
       - name: Download All Artifacts
         uses: actions/download-artifact@v4.1.0
         
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        with:
+          tag_name: ${{ needs.sing-box.outputs.version }}
+          release_name: ${{ needs.sing-box.outputs.version }}
+          body: |
+            ## Changes
+            - Added new artifacts for multiple platforms.
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
       - name: Upload Release Assets
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: ${{ needs.sing-box.outputs.version }}
-          name: ${{ needs.sing-box.outputs.version }}
-          body: |
+          #tag_name: ${{ needs.sing-box.outputs.version }}
+          #name: ${{ needs.sing-box.outputs.version }}
+          #body: |
             ## Changes
-            - SING-BOX SUPPORT PROVIDERS
+            #- SING-BOX SUPPORT PROVIDERS
           files: |
             sing-box-*
           
