@@ -23,8 +23,8 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
-          repository: qjebbs/sing-box
-          ref: main
+          repository: SagerNet/sing-box
+          ref: dev-next
       - name: with_clash_ui
         id: dashboard
         run: |  
