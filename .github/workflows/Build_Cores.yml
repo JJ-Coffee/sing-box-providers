@@ -171,8 +171,8 @@ jobs:
       - name: Upload Release Assets
         uses: softprops/action-gh-release@v1
         with:
-          tag: ${{ needs.sing-box.outputs.version }}
-          release: ${{ needs.sing-box.outputs.version }}
+          tag_name: ${{ needs.sing-box.outputs.version }}
+          name: SING-BOX -v${{ needs.sing-box.outputs.version }}
           body: |
             ## Changes
             - SING-BOX SUPPORT PROVIDERS
