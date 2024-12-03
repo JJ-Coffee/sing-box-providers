@@ -167,24 +167,15 @@ jobs:
           path: |
             sing-box${{ env.SUFFIX }}
           compression-level: 9
-     
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        with:
-          tag_name: ${{ needs.sing-box.outputs.version }}
-          release_name: ${{ needs.sing-box.outputs.version }}
-          body: |
-            ## Changes
-            - SING-BOX SUPPORT PROVIDERS
-          draft: false
-          prerelease: false
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload Release Assets
         uses: softprops/action-gh-release@v1
         with:
+          tag: ${{ needs.sing-box.outputs.version }}
+          release: ${{ needs.sing-box.outputs.version }}
+          body: |
+            ## Changes
+            - SING-BOX SUPPORT PROVIDERS
           files: |
             sing-boxt${{ env.SUFFIX }}
         env:
