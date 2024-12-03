@@ -172,7 +172,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           tag_name: ${{ needs.sing-box.outputs.version }}
-          name: SING-BOX -v${{ needs.sing-box.outputs.version }}
+          name: ${{ needs.sing-box.outputs.version }}
           body: |
             ## Changes
             - SING-BOX SUPPORT PROVIDERS
