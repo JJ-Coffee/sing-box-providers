@@ -167,7 +167,7 @@ jobs:
 
       - name: build server core
         env:
-          TAGS: with_quic,with_dhcp,with_wireguard,with_ech,with_utls,with_acme,with_reality_server,with_gvisor
+          TAGS: with_quic,with_dhcp,with_wireguard,with_ech,with_utls,with_acme,with_reality_server,with_gvisor,with_providers
         run: go build -o sing-box-server${{ env.SUFFIX }} -v -trimpath -ldflags "${{ matrix.jobs.goarch != 'loong64' && '-checklinkname=0 ' || '' }}-X 'github.com/sagernet/sing-box/constant.Version=${VERSION}' -s -w -buildid=" -tags "${TAGS}" ./cmd/sing-box
 
       - name: upload core
