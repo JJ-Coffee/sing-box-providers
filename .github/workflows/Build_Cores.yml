@@ -165,7 +165,7 @@ jobs:
         with:
           name: sing-box-${{ env.VERSION }}-${{ env.GOOS }}-${{ matrix.jobs.output }}
           path: |
-            sing-box${{ env.SUFFIX }}
+            sing-box-${{ env.SUFFIX }}
           compression-level: 9
 
       - name: Upload Release Assets
@@ -177,7 +177,7 @@ jobs:
             ## Changes
             - SING-BOX SUPPORT PROVIDERS
           files: |
-            sing-boxt${{ env.SUFFIX }}
+            sing-boxt-${{ env.SUFFIX }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
