@@ -168,16 +168,4 @@ jobs:
             sing-box-${{ env.SUFFIX }}
           compression-level: 9
 
-      - name: Create Release
-        uses: ncipollo/release-action@main
-        with:
-          tag: ${{ needs.sing-box.outputs.version }} # Replace with your sing-box version
-          name: Release ${{ needs.sing-box.outputs.version }}
-          replacesArtifacts: true
-          body: |
-            - Released sing-box version ${{ needs.sing-box.outputs.version }}
-          artifacts: |
-            sing-box-client${{ env.SUFFIX }}/*
-          token: ${{ secrets.GITHUB_TOKEN }}
-
           
