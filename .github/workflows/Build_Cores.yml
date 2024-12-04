@@ -165,7 +165,7 @@ jobs:
         with:
           name: sing-box-${{ env.VERSION }}-${{ env.GOOS }}-${{ matrix.jobs.output }}
           path: |
-            sing-box${{ env.SUFFIX }}/*
+            sing-box${{ env.SUFFIX }}
           compression-level: 9
 
       - name: Release
