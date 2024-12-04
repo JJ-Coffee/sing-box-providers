@@ -160,20 +160,11 @@ jobs:
           TAGS: with_quic,with_dhcp,with_wireguard,with_shadowsocksr,with_ech,with_utls,with_clash_api,with_gvisor,with_providers
         run: go build -o sing-box${{ env.SUFFIX }} -v -trimpath -ldflags "${{ matrix.jobs.goarch != 'loong64' && '-checklinkname=0 ' || '' }}-X 'github.com/sagernet/sing-box/constant.Version=${VERSION}' -s -w -buildid=" -tags "${TAGS}" ./cmd/sing-box
 
-      #- name: upload core
-      #  uses: actions/upload-artifact@v4.1.0
-      #  with:
-      #    name: sing-box-${{ env.VERSION }}-${{ env.GOOS }}-${{ matrix.jobs.output }}
-      #    path: |
-      #      sing-box${{ env.SUFFIX }}
-      #    compression-level: 9
-
-      - name: Release
-        uses: softprops/action-gh-release@v1
+      - name: upload core
+        uses: actions/upload-artifact@v4.1.0
         with:
-          tag_name: ${{ needs.sing-box.outputs.version }}
-          name: v${{ needs.sing-box.outputs.version }}
-          files: |
+          name: sing-box-${{ env.VERSION }}-${{ env.GOOS }}-${{ matrix.jobs.output }}
+          path: |
             sing-box${{ env.SUFFIX }}
           compression-level: 9
 
