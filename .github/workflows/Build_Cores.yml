@@ -112,7 +112,7 @@ jobs:
         with:
           fetch-depth: 0
           repository: sxlmnwb/sing-box
-          reff: main-next
+          ref: main-next
 
       - name: set up go1.22 loongarch
         if: ${{ matrix.jobs.goarch == 'loong64' }}
