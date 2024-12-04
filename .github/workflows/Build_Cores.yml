@@ -167,35 +167,17 @@ jobs:
           path: |
             sing-box-${{ env.SUFFIX }}
           compression-level: 9
-  release:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Download All Artifacts
-        uses: actions/download-artifact@v4.1.0
-        
+
       - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
+        uses: ncipollo/release-action@main
         with:
-          tag_name: ${{ needs.sing-box.outputs.version }}
-          release_name: ${{ needs.sing-box.outputs.version }}
+          tag: ${{ needs.sing-box.outputs.version }} # Replace with your sing-box version
+          name: Release ${{ needs.sing-box.outputs.version }}
+          replacesArtifacts: true
           body: |
-            ## Changes
-            - Added new artifacts for multiple platforms.
-          draft: false
-          prerelease: false
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
-      - name: Upload Release Assets
-        uses: softprops/action-gh-release@v1
-        with:
-          #tag_name: ${{ needs.sing-box.outputs.version }}
-          #name: ${{ needs.sing-box.outputs.version }}
-          #body: |
-            ## Changes
-            #- SING-BOX SUPPORT PROVIDERS
-          files: |
-            sing-box-*
+            - Released sing-box version ${{ needs.sing-box.outputs.version }}
+          artifacts: |
+            sing-box-client${{ env.SUFFIX }}/*
+          token: ${{ secrets.GITHUB_TOKEN }}
+
           
