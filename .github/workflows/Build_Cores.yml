@@ -165,7 +165,15 @@ jobs:
         with:
           name: sing-box-${{ env.VERSION }}-${{ env.GOOS }}-${{ matrix.jobs.output }}
           path: |
-            sing-box${{ env.SUFFIX }}
+            sing-box${{ env.SUFFIX }}/*
           compression-level: 9
+
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ needs.sing-box.outputs.version }}
+          name: v${{ needs.sing-box.outputs.version }}
+          files: |
+            sing-box${{ env.SUFFIX }}/*
 
           
